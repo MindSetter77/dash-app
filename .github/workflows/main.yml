@@ -31,10 +31,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t dash-app-server .
+        run: docker build -t infini7y/dash-app-server .
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/dash-app-server
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/infini7y/dash-app-server
